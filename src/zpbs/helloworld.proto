@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package im;
+
+message helloworld {
+    string usrname = 1;
+    string passwd = 2;
+    string email = 3;
+}
+
+message message1 {
+    string topic = 1;
+}

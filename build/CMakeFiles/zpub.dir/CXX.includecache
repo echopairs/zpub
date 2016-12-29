@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/nsky/utils/status.h
+
+/home/zsy/code/jz/zpub/include/nsky/utils/status_code_enum.h
+nsky/utils/status.h
+-
+string
+-
+
+/home/zsy/code/jz/zpub/main.cpp
+iostream
+-
+nsky/utils/status.h
+-
+include/nsky/utils/status_code_enum.h
+/home/zsy/code/jz/zpub/include/nsky/utils/status_code_enum.h
+
+/home/zsy/code/jz/zpub/src/demos/pub_example.cpp
+
+/home/zsy/code/jz/zpub/src/demos/sub_example.cpp
+

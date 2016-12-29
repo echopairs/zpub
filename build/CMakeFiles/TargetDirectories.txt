@@ -1,0 +1,3 @@
+/home/zsy/code/jz/zpub/build/CMakeFiles/edit_cache.dir
+/home/zsy/code/jz/zpub/build/CMakeFiles/rebuild_cache.dir
+/home/zsy/code/jz/zpub/build/CMakeFiles/zpub.dir

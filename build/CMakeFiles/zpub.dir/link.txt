@@ -1,0 +1,1 @@
+/usr/bin/c++    -std=c++11   CMakeFiles/zpub.dir/main.cpp.o CMakeFiles/zpub.dir/src/demos/pub_example.cpp.o CMakeFiles/zpub.dir/src/demos/sub_example.cpp.o  -o zpub 

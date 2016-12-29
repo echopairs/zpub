@@ -1,3 +1,10 @@
-./build
-*.o
-./bin
+/build
+/bin
+release/
+dist/
+external_libs/
+.idea/
+*.tgz
+*.tar.gz
+dist-install-deb*/
+*.deb
