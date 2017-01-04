@@ -7,17 +7,23 @@
 
 
 #include <memory>
+#include <src/pub/pub_impl.h>  // bad design
 
 namespace nsky {
     /// pub belong to client
 namespace client {
 
-    class PubImpl;
-    enum class PubType unsigned int;
-
     class PhysicalPub
     {
     public:
+        PhysicalPub(const std::string address);
+        template <typename T>
+        void PublisherMessage(T &message, int timeout = -1)
+        {
+            _pubImpl->PublishMessage(message);
+        }
+        bool UnRegisterPublisher(const std::string &topic);
+        bool RegisterPublisher(const std::string &topic, const std::string &type = "default");
     private:
         std::shared_ptr<PubImpl> _pubImpl;
     };

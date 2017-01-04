@@ -11,7 +11,8 @@
 #include <string>
 #include <iostream>
 #include <netinet/in.h>
-#include <sspdlog/sspdlog.h>
+#include <mutex>
+//#include <sspdlog/sspdlog.h>
 
 namespace nsky {
 namespace utils {
@@ -70,7 +71,7 @@ namespace utils {
         if (buf.length() != packet_len)
         {
             /// TODO log receved error buf
-            SSPD_LOG_WARNING << "received error buf";
+           // SSPD_LOG_WARNING << "received error buf";
             return nullptr;
         }
 
@@ -85,7 +86,7 @@ namespace utils {
         if(!result)
         {
             // TODO log
-            SSPD_LOG_WARNING << "create_message failed, the typename is " << type_name;
+           // SSPD_LOG_WARNING << "create_message failed, the typename is " << type_name;
             return result;
         }
         std::string packet(type_end, buf.length() - 2 * sizeof(size_t) - type_name_len);
