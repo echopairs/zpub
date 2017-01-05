@@ -10,8 +10,7 @@
 #include <google/protobuf/message.h>
 #include <nsky/utils/serialization.h>
 #include <zmq.hpp>
-#include "publish_interface.h"
-
+#include <nsky/pub/publish_interface.h>
 
 namespace nsky {
 namespace client {

@@ -6,7 +6,7 @@
 #define ZPUB_PUB_STUB_FACTORY_H
 
 #include <memory>
-#include "publish_interface.h"
+#include <nsky/pub/publish_interface.h>
 #include "stub/zmq_pub_impl.h"
 
 namespace nsky {

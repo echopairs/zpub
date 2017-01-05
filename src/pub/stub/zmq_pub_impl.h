@@ -7,8 +7,8 @@
 
 #include <memory>
 #include <zmq.hpp>
-#include <src/pub/publish_interface.h>
-#include "../publish_interface.h"
+#include <nsky/pub/publish_interface.h>
+
 
 namespace nsky {
 namespace client {

@@ -7,7 +7,7 @@
 
 
 #include <memory>
-#include <src/pub/pub_impl.h>  // bad design
+#include <nsky/pub/pub_impl.h>
 
 namespace nsky {
     /// pub belong to client

@@ -53,6 +53,8 @@ set(SOURCE_FILES
         include/nsky/sub/logical_sub_service.h
         include/nsky/sub/physical_sub_service.h
         include/nsky/utils/serialization.h
+        include/nsky/pub/pub_impl.h
+        include/nsky/pub/publish_interface.h
         src/common/zeromq_help.h
         src/pub/physical_pub_client.cpp
         src/sub/physical_sub_service.cpp
@@ -60,9 +62,8 @@ set(SOURCE_FILES
         src/pub/stub/zmq_pub_impl.h
         src/pub/stub/zmq_pub_impl.cpp
         src/pub/pub_stub_factory.h
-        src/pub/pub_impl.h
         src/pub/pub_impl.cpp
-        src/pub/publish_interface.h)
+        )
 
 add_library(zpub ${SOURCE_FILES})
 

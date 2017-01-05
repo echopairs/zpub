@@ -2,8 +2,8 @@
 // Created by zsy on 1/4/17.
 //
 
-#include "pub_impl.h"
-#include "pub_stub_factory.h"
+#include <nsky/pub/pub_impl.h>
+#include <src/pub/pub_stub_factory.h>
 
 namespace nsky {
 
