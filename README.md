@@ -13,7 +13,6 @@ The pub/sub network framework base on  zeromq and protobuf
   |   |- sub/           sub模块(订阅处理消息模块)
   |   |- zpbs			*.proto文件目录
   |- tools/             构建/发布/测试等相关脚本
-  ```
 ```
 ### Requirements
  #### Tools
