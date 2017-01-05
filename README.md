@@ -15,12 +15,12 @@ The pub/sub network framework base on  zeromq and protobuf
   |- tools/             构建/发布/测试等相关脚本
 ```
 ### Requirements
-
+依赖
  #### Tools
- 
+  cmake >= 3.2 
  #### Dependent libs
- 
-
+ zeromq
+ protobuf
 ### Build
 
 
