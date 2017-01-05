@@ -62,6 +62,15 @@ set(SOURCE_FILES
         src/pub/stub/zmq_pub_impl.cpp
         src/pub/pub_stub_factory.h
         src/pub/pub_impl.cpp
+
+        include/nsky/utils/thread_pool.h
+        src/sub/sub_server.h
+        src/sub/sub_server.cpp
+        src/sub/sub_impl.cpp
+        src/sub/sub_impl.h
+        src/sub/physical_sub_service.cpp
+        src/sub/zmq_sub/zmq_sub_impl.h
+        src/sub/zmq_sub/zmq_sub_impl.cpp
         )
 
 add_library(zpub ${SOURCE_FILES})
@@ -72,21 +81,13 @@ set (PUB_FILES
         example/cpp/pub_example.cpp
        )
 
-add_executable(pub ${PUB_FILES})
-target_link_libraries(pub zpub)
+add_executable(pub_example ${PUB_FILES})
+target_link_libraries(pub_example zpub)
 
 set(SUB_FILES
         ${PROTO_SRCS}
         ${PROTO_HDRS}
-        include/nsky/utils/thread_pool.h
-        src/sub/sub_server.h
-        src/sub/sub_server.cpp
-        src/sub/sub_impl.cpp
-        src/sub/sub_impl.h
-        src/sub/physical_sub_service.cpp
-        src/sub/zmq_sub/zmq_sub_impl.h
-        src/sub/zmq_sub/zmq_sub_impl.cpp
         example/cpp/sub_example.cpp)
-add_executable(sub ${SUB_FILES})
-target_link_libraries(sub zpub)
+add_executable(sub_example ${SUB_FILES})
+target_link_libraries(sub_example zpub)
 
