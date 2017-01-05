@@ -57,7 +57,6 @@ set(SOURCE_FILES
         include/nsky/pub/publish_interface.h
         src/common/zeromq_help.h
         src/pub/physical_pub_client.cpp
-        src/sub/physical_sub_service.cpp
         src/pub/default_client_config.h
         src/pub/stub/zmq_pub_impl.h
         src/pub/stub/zmq_pub_impl.cpp
@@ -70,7 +69,24 @@ add_library(zpub ${SOURCE_FILES})
 set (PUB_FILES
         ${PROTO_SRCS}
         ${PROTO_HDRS}
-        example/cpp/pub_example.cpp)
+        example/cpp/pub_example.cpp
+       )
 
 add_executable(pub ${PUB_FILES})
 target_link_libraries(pub zpub)
+
+set(SUB_FILES
+        ${PROTO_SRCS}
+        ${PROTO_HDRS}
+        include/nsky/utils/thread_pool.h
+        src/sub/sub_server.h
+        src/sub/sub_server.cpp
+        src/sub/sub_impl.cpp
+        src/sub/sub_impl.h
+        src/sub/physical_sub_service.cpp
+        src/sub/zmq_sub/zmq_sub_impl.h
+        src/sub/zmq_sub/zmq_sub_impl.cpp
+        example/cpp/sub_example.cpp)
+add_executable(sub ${SUB_FILES})
+target_link_libraries(sub zpub)
+

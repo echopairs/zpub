@@ -1,20 +1,16 @@
 //
-// Created by zsy on 12/19/16.
+// Created by zsy on 1/5/17.
 //
 
-#include <serialization.h>
-#include "sub_server.h"
+#include <src/sub/sub_server.h>
+#include <nsky/utils/serialization.h>
 
 namespace nsky {
-  namespace service {
+namespace service {
 
-    SubServer::SubServer(size_t thread_size):_threadPool(8)
-    {
-
-    }
     void SubServer::HandleMessage(const std::string data)
     {
-        google::protobuf::Message *message = jrpc::decode(data);
+        google::protobuf::Message *message = nsky::utils::decode(data);
         deal_message(message);
     }
 
@@ -30,14 +26,16 @@ namespace nsky {
         _message_call_backs.erase(name);
     }
 
-    void SubServer::deal_message(google::protobuf::Message* msg)
+    void test(google::protobuf::Message *msg)
+    {}
+    void SubServer::deal_message(google::protobuf::Message *msg)
     {
         if (msg == nullptr) return;
         std::lock_guard<std::mutex> lk(_cbMutex);
         auto iter_map = _message_call_backs.find(msg->GetTypeName());
         if (iter_map != _message_call_backs.end())
         {
-            (*(iter_map->second.get()))(msg);
+            /// QueueTask to taskQueue
             QueueTask(*(iter_map->second.get()), msg);
         }
         else
@@ -46,11 +44,16 @@ namespace nsky {
         }
     }
 
+    SubServer::SubServer(size_t threadNum):_threadPool(threadNum)
+    {
+    }
+
     SubServer::~SubServer()
     {
         std::lock_guard<std::mutex> lk(_cbMutex);
         _message_call_backs.clear();
     }
 
-} // namespace service
-} // namespace nsky
+}
+}
+

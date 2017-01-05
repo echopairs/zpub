@@ -12,9 +12,11 @@
 #include <stdexcept>
 #include <atomic>
 
+
 namespace nsky {
 namespace utils {
 
+  using namespace std;
   class ThreadPool {
   public:
   	ThreadPool(size_t);

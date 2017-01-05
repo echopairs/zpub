@@ -7,6 +7,7 @@
 
 
 #include <memory>
+#include <google/protobuf/message.h>
 
 namespace nsky {
 namespace service {
@@ -16,6 +17,10 @@ namespace service {
     class PhysicalSub
     {
     public:
+        PhysicalSub();
+        ~PhysicalSub();
+        bool UnRegisterSubscriber(const std::string &topic);
+        bool RegisterSubscriber(const std::string &topic, const std::string &address, std::function<void(google::protobuf::Message*)> cb);
     private:
         std::shared_ptr<SubImpl> _subImpl;
     };
