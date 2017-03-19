@@ -3,6 +3,8 @@ project(zpub)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -g")
 
+link_directories(/usr/local/lib)
+
 if(UNIX)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
     set(PROTOBUF_PROTOC_EXECUTABLE /usr/local/bin/protoc)
